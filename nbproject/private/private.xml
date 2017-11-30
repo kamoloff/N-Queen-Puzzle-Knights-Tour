@@ -5,7 +5,7 @@
             <url>src/nqueen/MainPage.java</url>
             <bookmark id="1">
                 <name/>
-                <line>209</line>
+                <line>216</line>
                 <key/>
             </bookmark>
         </file>
@@ -15,7 +15,6 @@
             <file>file:/Users/ozzy/NetBeansProjects/NQueen/src/nqueen/NQueen.java</file>
             <file>file:/Users/ozzy/NetBeansProjects/NQueen/src/nqueen/MainPage.java</file>
             <file>file:/Users/ozzy/NetBeansProjects/NQueen/src/nqueen/Queen.java</file>
-            <file>file:/Users/ozzy/NetBeansProjects/NQueen/src/nqueen/KnightsTour.java</file>
         </group>
     </open-files>
 </project-private>

@@ -6,9 +6,12 @@
 package nqueen;
 
 /**
- *
+ * 
  * @author ozzy
+ * 
  */
+
+
 public class NQueen {
 
     /**

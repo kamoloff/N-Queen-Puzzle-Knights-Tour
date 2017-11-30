@@ -14,38 +14,28 @@ import javax.swing.JPanel;
 public class Queen extends JPanel {
         
      private static int dimension, dim;
-     public static char[][] t;
+     private static char[][] t;
+     private static int size = 35; // size of the cell
+     private static int margin = 80;   // margin of the board
+    
      
       public void paint(Graphics g){
         int d = dimension;
         Image img1 = Toolkit.getDefaultToolkit().getImage("src/pic_queen.png");
         g.setColor(new Color(255, 189, 35));
-        g.fillRect(100, 100, dim, dim);
+        g.fillRect(margin, margin, dim, dim);
         if(d == 1)
-             g.drawImage(img1, 100, 100, 50, 50 , null , this);
-        else if(d%2==1){
-            for(int i = 100; i <= dim+100; i+=100){
-                for(int j = 100; j <= dim+100; j+=100){
-                    g.clearRect(i, j, 50, 50);
-                }
-            }
-
-            for(int i = 150; i <= dim+50; i+=100){
-                for(int j = 150; j <= dim+50; j+=100){
-                    g.clearRect(i, j, 50, 50);
-                }
-            }
-        }
+             g.drawImage(img1, margin, margin, size, size , null , this);
         else{
-            for(int i = 100; i <= dim; i+=100){
-                for(int j = 100; j <= dim; j+=100){
-                    g.clearRect(i, j, 50, 50);
+            for(int i = margin; i < dim + margin; i+=2*size){
+                for(int j = margin; j < dim + margin; j+=2*size){
+                    g.clearRect(i, j, size, size);
                 }
             }
 
-            for(int i = 150; i <= dim+50; i+=100){
-                for(int j = 150; j <= dim+50; j+=100){
-                    g.clearRect(i, j, 50, 50);
+            for(int i = margin+size; i < dim + margin; i+=2*size){
+                for(int j = margin + size; j < dim + margin; j+=2*size){
+                    g.clearRect(i, j, size, size);
                 }
             }
         }
@@ -54,7 +44,7 @@ public class Queen extends JPanel {
         for(int i = 0; i < d; i++)
             for(int j = 0; j < d; j++)
                 if(t[i][j] == 'Q')
-                g.drawImage(img1, 100 + i*50, 100 + j * 50, 50, 50 , null , this);
+                g.drawImage(img1, margin + i*size, margin + j * size, size, size , null , this);
         
         
     }
@@ -65,9 +55,10 @@ public class Queen extends JPanel {
     public static void main(String[] args){
    
     dimension = Integer.parseInt(args[0]);
-    dim = dimension * 50;
+    size = Integer.parseInt(args[1]);
+    dim = dimension * size;
     JFrame frame = new JFrame();
-    frame.setSize(dim+200, dim+200);
+    frame.setSize(dim+2* + margin, dim+2* + margin + size / 2);
     frame.getContentPane().add(new Queen());
     frame.setLocationRelativeTo(null);
     frame.setBackground(Color.LIGHT_GRAY);
