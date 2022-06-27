@@ -14,7 +14,7 @@ A knight's tour is a sequence of moves of a knight on a chessboard such that the
 # Project is built in Netbeans IDE (Java)
 
 # Clone the project
-https://github.com/OzodbekKamolov/NQueensPuzzle.git
+https://github.com/kamoloff/NQueensPuzzle.git
 
 # Here is how this application works with visualization
 
